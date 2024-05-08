@@ -108,7 +108,7 @@ export async function init(router) {
 		const dir = path.join(process.cwd(), 'plugins');
 		const plugin = path.join(dir, req.body.plugin);
 		try {
-			fs.rmdirSync(plugin, { recursive:true, force:true });
+			fs.rmSync(plugin, { recursive:true, force:true });
 			res.send(true);
 		} catch {
 			res.send(false);
